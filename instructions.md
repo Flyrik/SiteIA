@@ -1,79 +1,41 @@
-# Instructions — Site de cours personnel
+ Vision AI Platform
 
-## Objectif
+ c'est un site web, mais pas un site "vitrine" basique — c'est une web app complète, comme un vrai produit SaaS.
+Concrètement l'utilisateur ouvre son navigateur, et il a :
 
-Site de cours personnel dédié à la **XR (Extended Reality)**, à l'**IA** et à la **vision par ordinateur**.
-Usage privé, pas d'authentification ni de gestion d'utilisateurs.
+Une interface interactive où il upload des images/vidéos ou active sa webcam
+Des résultats qui s'affichent en temps réel avec les détections
+Un dashboard avec son historique et ses stats
+Plusieurs modules accessibles via un menu
 
-## Stack technique
+📸 Module 1 — Analyse d'image / webcam (la base)
 
-- **Next.js** (App Router)
-- **Tailwind CSS**
-- **MDX** pour le contenu des cours (Markdown + composants React)
-- **TypeScript**
+Détection d'objets + bounding boxes
+Description de scène par Claude
+Ajout : historique des analyses, export PDF du rapport
 
-## Thèmes couverts
+🎥 Module 2 — Analyse vidéo
 
-1. **Intelligence Artificielle** — fondamentaux, deep learning, LLMs, etc.
-2. **Vision par ordinateur** — traitement d'image, détection d'objets, segmentation, etc.
-3. **XR (AR/VR/MR)** — concepts, moteurs, cas d'usage, etc.
-4. **Python pour l'IA** — syntaxe, NumPy, OpenCV, PyTorch, etc.
+Upload d'une courte vidéo → analyse frame par frame
+Détection de mouvement, comptage d'objets dans le temps
+Timeline interactive des événements détectés
 
-Chaque thème doit avoir des cours **débutant → avancé**.
+🔍 Module 3 — Recherche visuelle
 
-## Structure des cours
+Upload une image → le site trouve des images similaires ou identifie le contexte (lieu, style architectural, type de végétation...)
+Comparaison côte à côte de deux images avec diff IA
 
-Chaque cours MDX doit pouvoir contenir :
+📊 Module 4 — Dashboard & Analytics
 
-- **Explication théorique** : texte structuré avec titres, listes, formules
-- **Blocs de code commentés** : morceaux de Python expliqués ligne par ligne
-- **Quiz (QCM)** : questions à choix multiple avec feedback immédiat (bonne/mauvaise réponse)
-- **Questions ouvertes** : avec bouton "voir la réponse"
-- **Cartes de révision** : terme → définition, retournables
-- **Exercices pratiques** : énoncé + solution révélable
+Statistiques sur toutes tes analyses (objets les plus détectés, heatmap des zones actives...)
+Graphiques interactifs
+Historique des sessions
 
-## Composants React à créer
+🎨 Module 5 — Mode "Artiste IA"
 
-| Composant | Rôle |
-|-----------|------|
-| `Quiz` | QCM interactif avec feedback coloré |
-| `CodeExplainer` | Bloc de code avec explication par ligne révélable |
-| `Flashcard` | Carte retournable recto/verso |
-| `RevealAnswer` | Bouton "voir la réponse" pour questions ouvertes |
-| `Exercise` | Énoncé + solution cachée |
+Analyse une image → génère une version stylisée ou un prompt Stable Diffusion à partir de la description
 
-Ces composants sont utilisables directement dans les fichiers MDX.
+🌍 Module 6 — Accessibilité
 
-## Style
-
-- Dark mode par défaut (ambiance tech)
-- Typographie lisible pour les longs textes théoriques
-- Coloration syntaxique pour tout le code Python
-
-## Organisation des fichiers de cours
-
-```
-/content
-  /ia
-    /fondamentaux
-    /deep-learning
-    /llm
-  /vision
-    /traitement-image
-    /detection
-  /xr
-    /ar
-    /vr
-  /python
-    /bases
-    /numpy
-    /pytorch
-    /opencv
-```
-
-## Ce qui n'est PAS nécessaire
-
-- Authentification / comptes utilisateurs
-- Base de données (contenu statique en MDX)
-- Commentaires ou interactions sociales
-- Paiement ou accès restreint
+Génère automatiquement une description alt-text pour malvoyants
+Traduit la description en plusieurs langues
