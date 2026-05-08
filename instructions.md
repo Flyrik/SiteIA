@@ -1,41 +1,58 @@
- Vision AI Platform
+💊🌿 SnapDiag — Description complète
 
- c'est un site web, mais pas un site "vitrine" basique — c'est une web app complète, comme un vrai produit SaaS.
-Concrètement l'utilisateur ouvre son navigateur, et il a :
+📸 Module 1 — Identification instantanée
+L'utilisateur prend une photo ou uploade une image de n'importe quel médicament ou plante. L'IA détecte automatiquement de quoi il s'agit, affiche le nom, et redirige vers le bon module.
 
-Une interface interactive où il upload des images/vidéos ou active sa webcam
-Des résultats qui s'affichent en temps réel avec les détections
-Un dashboard avec son historique et ses stats
-Plusieurs modules accessibles via un menu
+💊 Module Médicament
 
-📸 Module 1 — Analyse d'image / webcam (la base)
+Identification — reconnaît la boîte, le blister, ou le comprimé seul (forme, couleur, gravure)
+Fiche complète — nom générique + commercial, laboratoire, classe thérapeutique
+À quoi ça sert — indications claires en langage simple, pas en jargon médical
+Posologie — dosage recommandé selon l'âge, fréquence, durée de traitement
+Contre-indications — qui ne doit pas le prendre, interactions avec d'autres médicaments
+Effets secondaires — les plus fréquents expliqués simplement
+Conservation — température, lumière, durée après ouverture
+Équivalents génériques — alternatives moins chères qui font la même chose
 
-Détection d'objets + bounding boxes
-Description de scène par Claude
-Ajout : historique des analyses, export PDF du rapport
 
-🎥 Module 2 — Analyse vidéo
+🌿 Module Plante
 
-Upload d'une courte vidéo → analyse frame par frame
-Détection de mouvement, comptage d'objets dans le temps
-Timeline interactive des événements détectés
+Identification — reconnaît l'espèce à partir d'une photo de feuille, fleur, ou tige
+Diagnostic de santé — détecte si la plante est malade, stressée, carencée ou en bonne santé
+Analyse visuelle — repère les taches, jaunissement, flétrissement, parasites visibles
+Causes probables — trop d'eau, pas assez de lumière, carence en nutriments, champignon, insectes
+Plan de soin — actions concrètes à faire immédiatement, dans 1 semaine, dans 1 mois
+Profil de la plante — arrosage idéal, exposition, température, humidité
+Calendrier d'entretien — rappels personnalisés pour arroser, rempoter, tailler
 
-🔍 Module 3 — Recherche visuelle
 
-Upload une image → le site trouve des images similaires ou identifie le contexte (lieu, style architectural, type de végétation...)
-Comparaison côte à côte de deux images avec diff IA
+📊 Module Historique & Suivi
 
-📊 Module 4 — Dashboard & Analytics
+Toutes tes analyses sauvegardées avec la photo et la date
+Suivi de l'évolution de tes plantes dans le temps (tu rephotographies chaque semaine)
+Armoire à pharmacie digitale — liste de tous tes médicaments scannés avec dates de péremption
+Alertes péremption — notification quand un médicament expire bientôt
 
-Statistiques sur toutes tes analyses (objets les plus détectés, heatmap des zones actives...)
-Graphiques interactifs
-Historique des sessions
 
-🎨 Module 5 — Mode "Artiste IA"
+🔍 Module Recherche
 
-Analyse une image → génère une version stylisée ou un prompt Stable Diffusion à partir de la description
+Barre de recherche textuelle si tu n'as pas de photo
+Recherche par symptôme → "j'ai mal à la tête, qu'est ce que j'ai chez moi qui peut aider ?"
+Recherche par plante → "ma plante a des taches noires, c'est quoi ?"
 
-🌍 Module 6 — Accessibilité
 
-Génère automatiquement une description alt-text pour malvoyants
-Traduit la description en plusieurs langues
+⚠️ Module Sécurité & Disclaimer
+
+Avertissement clair que l'outil ne remplace pas un médecin ou pharmacien
+Signalement automatique des interactions dangereuses entre médicaments
+Bouton "Contacter un professionnel" avec liens vers médecin, pharmacie, ou 15/SAMU si urgence
+
+Ce qu'on utilise
+Photo de l'utilisateur
+        ↓
+  Claude Vision API  ←── le cerveau principal
+        ↓
+  Résultat structuré (nom, effets, conseils...)
+        ↓
+  Affiché proprement sur le site
+Claude Vision reçoit l'image + une instruction précise, et répond avec toutes les infos. C'est lui qui fait le travail d'identification et d'analyse.
